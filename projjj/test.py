@@ -52,4 +52,5 @@ while True :
     except Exception as e:
         print(f"❌ Client error: {e}")
     finally:
-        fir_neprotejat.close()
+        if fir_neprotejat:
+            fir_neprotejat.close()
