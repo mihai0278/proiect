@@ -14,7 +14,8 @@ ADRESA_TELECOMANDA: Final[str] = 'proiectt.sbs'
 context = ssl.create_default_context()
 telecomanda_nesecurizata = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 telecomanda_nesecurizata.settimeout(TIMEOUT)
-telecomanda = context.wrap_socket(telecomanda_nesecurizata, server_hostname='proiectt.sbs')
+#telecomanda = context.wrap_socket(telecomanda_nesecurizata, server_hostname='proiectt.sbs')
+telecomanda = telecomanda_nesecurizata
 print("telecomanda creata, asteapta conexiune...")
 
 try:
@@ -40,35 +41,3 @@ except OSError as e:
 
 finally:
     telecomanda.close()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
